@@ -125,3 +125,22 @@ curl -XGET http://localhost:2479/health
 * To get the token : openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
 
 * Make sure to point the "server:" to the VIP, not the individual master. Restart Kubelet to enable the changes.
+
+### Install Heapster-Influxdb and WebUI
+
+* Using kube-dashboard/kube-dashboard.yaml and heapster.yaml
+
+  ```
+  kubectl apply -f kube-dashboard.yaml
+  kubectl apply -f influxdb.yaml
+  kubectl apply -f heapster.yaml
+  kubectl apply -f heapster_rbac.yaml
+  ```
+* Get the admin token to login to the UI
+
+  ```
+  kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+  ```
+![alt text](https://github.com/gokulpch/Kubernetes_Prod_HA_Calico/blob/master/images/kube-heapster.png)
+![alt text](https://github.com/gokulpch/Kubernetes_Prod_HA_Calico/blob/master/images/kube-web-1.png)
+![alt text](https://github.com/gokulpch/Kubernetes_Prod_HA_Calico/blob/master/images/kube-webui-2.png)
