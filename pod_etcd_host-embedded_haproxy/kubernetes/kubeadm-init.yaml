@@ -1,0 +1,22 @@
+##Change the IP's as necessary
+apiVersion: kubeadm.k8s.io/v1alpha1
+kind: MasterConfiguration
+kubernetesVersion: v1.9.1
+networking:
+  podSubnet: 10.244.0.0/16
+apiServerCertSANs:
+- kube-master1
+- kube-master2
+- kube-master3
+- 172.25.1.34
+- 172.25.1.60
+- 172.25.1.251
+- 172.25.1.15
+- 127.0.0.1
+etcd:
+  endpoints:
+  - http://172.25.1.34:2379
+  - http://172.25.1.60:2379
+  - http://172.25.1.251:2379
+token: 7f276c.0741d82a5337f526
+tokenTTL: "0"
