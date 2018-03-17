@@ -1,0 +1,17 @@
+#create a file: /lib/systemd/system/etcd.service
+# Change the Hostname as required
+[Unit]
+Description=etcd
+Documentation=https://github.com/coreos/etcd
+
+[Service]
+Type=notify
+Restart=always
+RestartSec=5s
+LimitNOFILE=40000
+TimeoutStartSec=0
+
+ExecStart=/usr/bin/etcd --name <HOSTNAME> --data-dir /var/lib/etcd --listen-client-urls http://0.0.0.0:2379 --advertise-client-urls http://<HOST_IP>:2379 --listen-peer-urls http://<HOST_IP:2380 --initial-advertise-peer-urls http://172.16.80.37:2380 --initial-cluster etcd01=http://172.15.80.36:2380,etcd02=http://172.15.80.37:2380,etcd03=http://172.15.80.38:2380 --initial-cluster-token webui-etcd-token --initial-cluster-state new
+
+[Install]
+WantedBy=multi-user.target

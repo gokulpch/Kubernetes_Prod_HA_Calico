@@ -1,0 +1,17 @@
+#Create a seperate directory for calico:mkdir -p /var/lib/etcd-calico
+#create a file: /lib/systemd/system/etcd-calico.service
+[Unit]
+Description=etcd-calico
+Documentation=https://github.com/coreos/etcd
+
+[Service]
+Type=notify
+Restart=always
+RestartSec=5s
+LimitNOFILE=40000
+TimeoutStartSec=0
+
+ExecStart=/usr/bin/etcd --name etcd01-calico --data-dir /var/lib/etcd-calico --listen-client-urls http://0.0.0.0:2479 --advertise-client-urls http://172.16.80.38:2479 --listen-peer-urls http://172.16.80.38:2480 --initial-advertise-peer-urls http://172.16.80.38:2480 --initial-cluster etcd01-calico=http://172.16.80.37:2480,etcd02-calico=http://172.16.80.35:2480,etcd03-calico=http://172.16.80.38:2480 --initial-cluster-token webui-etcd-token --initial-cluster-state new
+
+[Install]
+WantedBy=multi-user.target
