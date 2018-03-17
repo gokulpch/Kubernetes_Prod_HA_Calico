@@ -20,3 +20,7 @@ This repo has two different approaches to create a Kubernetes cluster in product
 ![alt text](https://github.com/gokulpch/Kubernetes_Prod_HA_Calico/blob/master/images/etc_pod%26emb_lb.png)
 
 
+![alt text](https://github.com/gokulpch/Kubernetes_Prod_HA_Calico/blob/master/images/topo-1.png)
+![alt text](https://github.com/gokulpch/Kubernetes_Prod_HA_Calico/blob/master/images/topo-2.png)
+
+3. Use Heptio's Sonobuoy https://github.com/heptio/sonobuoy to check the readiness of the cluster. Sample Sonobuoy results are attached with the Repo
