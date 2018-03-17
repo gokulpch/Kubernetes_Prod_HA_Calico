@@ -1,4 +1,4 @@
-# Kubernetes Cluster with External ETCD for both Kube and Calico & External Load Balncer's
+# Kubernetes Cluster with External ETCD for both Kube and Calico & External Load Balancer's
 
 
 ### Topology
