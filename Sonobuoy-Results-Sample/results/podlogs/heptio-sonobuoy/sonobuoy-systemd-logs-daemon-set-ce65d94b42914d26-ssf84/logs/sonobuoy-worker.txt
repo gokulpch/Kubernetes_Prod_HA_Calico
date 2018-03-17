@@ -1,0 +1,2 @@
+time="2018-02-08T02:01:42Z" level=info msg="Waiting on: (/tmp/results/done)"
+time="2018-02-08T02:01:42Z" level=info msg="Detected done file, transmitting: (/tmp/results/systemd_logs)"

@@ -1,0 +1,29 @@
+{"level":"info","msg":"Filtering namespaces based on the following regex:.*|heptio-sonobuoy","time":"2018-02-08T02:01:11Z"}
+{"level":"info","msg":"Namespace default Matched=true","time":"2018-02-08T02:01:11Z"}
+{"level":"info","msg":"Namespace heptio-sonobuoy Matched=true","time":"2018-02-08T02:01:11Z"}
+{"level":"info","msg":"Namespace kube-public Matched=true","time":"2018-02-08T02:01:11Z"}
+{"level":"info","msg":"Namespace kube-system Matched=true","time":"2018-02-08T02:01:11Z"}
+{"level":"info","msg":"Starting server Expected Results: [{ e2e} {ip-172-25-1-168 systemd_logs} {ip-172-25-1-241 systemd_logs} {ip-172-25-1-251 systemd_logs} {ip-172-25-1-34 systemd_logs} {ip-172-25-1-60 systemd_logs}]","time":"2018-02-08T02:01:11Z"}
+{"address":"0.0.0.0","level":"info","msg":"starting aggregation server","port":8080,"time":"2018-02-08T02:01:11Z"}
+{"level":"info","msg":"Running plugin","plugin":"e2e","time":"2018-02-08T02:01:11Z"}
+{"level":"info","msg":"Running plugin","plugin":"systemd-logs","time":"2018-02-08T02:01:11Z"}
+{"client_cert":"systemd-logs","level":"info","msg":"received aggregator request","node":"ip-172-25-1-241","plugin_name":"systemd_logs","time":"2018-02-08T02:01:25Z"}
+{"client_cert":"systemd-logs","level":"info","msg":"received aggregator request","node":"ip-172-25-1-251","plugin_name":"systemd_logs","time":"2018-02-08T02:01:31Z"}
+{"client_cert":"systemd-logs","level":"info","msg":"received aggregator request","node":"ip-172-25-1-60","plugin_name":"systemd_logs","time":"2018-02-08T02:01:32Z"}
+{"client_cert":"systemd-logs","level":"info","msg":"received aggregator request","node":"ip-172-25-1-34","plugin_name":"systemd_logs","time":"2018-02-08T02:01:37Z"}
+{"client_cert":"systemd-logs","level":"info","msg":"received aggregator request","node":"ip-172-25-1-168","plugin_name":"systemd_logs","time":"2018-02-08T02:01:42Z"}
+{"client_cert":"e2e","level":"info","msg":"received aggregator request","plugin_name":"e2e","time":"2018-02-08T02:01:56Z"}
+{"level":"info","msg":"Running non-ns query","time":"2018-02-08T02:01:56Z"}
+{"level":"error","msg":"error querying CustomResourceDefinitions: the server could not find the requested resource","time":"2018-02-08T02:01:56Z"}
+{"level":"info","msg":"Collecting Node Configuration and Health...","time":"2018-02-08T02:01:56Z"}
+{"level":"info","msg":"Creating host results for ip-172-25-1-168 under /tmp/sonobuoy/2caf8a2b-ecc6-4eac-a513-714cd057fdbf/hosts/ip-172-25-1-168\n","time":"2018-02-08T02:01:56Z"}
+{"level":"info","msg":"Creating host results for ip-172-25-1-241 under /tmp/sonobuoy/2caf8a2b-ecc6-4eac-a513-714cd057fdbf/hosts/ip-172-25-1-241\n","time":"2018-02-08T02:01:56Z"}
+{"level":"info","msg":"Creating host results for ip-172-25-1-251 under /tmp/sonobuoy/2caf8a2b-ecc6-4eac-a513-714cd057fdbf/hosts/ip-172-25-1-251\n","time":"2018-02-08T02:01:56Z"}
+{"level":"info","msg":"Creating host results for ip-172-25-1-34 under /tmp/sonobuoy/2caf8a2b-ecc6-4eac-a513-714cd057fdbf/hosts/ip-172-25-1-34\n","time":"2018-02-08T02:01:56Z"}
+{"level":"info","msg":"Creating host results for ip-172-25-1-60 under /tmp/sonobuoy/2caf8a2b-ecc6-4eac-a513-714cd057fdbf/hosts/ip-172-25-1-60\n","time":"2018-02-08T02:01:56Z"}
+{"level":"info","msg":"Running ns query (default)","time":"2018-02-08T02:01:57Z"}
+{"level":"info","msg":"Running ns query (heptio-sonobuoy)","time":"2018-02-08T02:01:59Z"}
+{"level":"info","msg":"Collecting Pod Logs...","time":"2018-02-08T02:02:00Z"}
+{"level":"error","msg":"error querying PodPresets: the server could not find the requested resource (get podpresets.settings.k8s.io)","time":"2018-02-08T02:02:03Z"}
+{"level":"info","msg":"Running ns query (kube-public)","time":"2018-02-08T02:02:05Z"}
+{"level":"info","msg":"Running ns query (kube-system)","time":"2018-02-08T02:02:07Z"}
