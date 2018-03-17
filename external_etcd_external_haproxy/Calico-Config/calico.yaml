@@ -15,12 +15,14 @@ metadata:
   namespace: kube-system
 data:
   # Configure this with the location of your etcd cluster.
-  etcd_endpoints: "http://172.16.129.75:2479,http://172.16.129.74:2479,http://172.16.129.73:2479"
+  # Point the endpoints to the etcd cluster created
+  etcd_endpoints: "http://172.16.80.75:2479,http://172.16.80.74:2479,http://172.16.80.73:2479"
  
   # Configure the Calico backend to use.
   calico_backend: "bird"
  
   # The CNI network configuration to install on each node.
+  # Make sure to point api_root to the VIP
   cni_network_config: |-
     {
       "name": "k8s-pod-network",
@@ -28,7 +30,7 @@ data:
       "plugins": [
         {
             "type": "calico",
-            "etcd_endpoints": "http://172.16.129.75:2479,http://172.16.129.74:2479,http://172.16.129.73:2479",
+            "etcd_endpoints": "http://172.16.80.75:2479,http://172.16.80.74:2479,http://172.16.80.73:2479",
             "log_level": "info",
             "mtu": 1500,
             "ipam": {
@@ -36,7 +38,7 @@ data:
             },
             "policy": {
                 "type": "k8s",
-                "k8s_api_root": "http://172.16.129.81:8080",
+                "k8s_api_root": "http://172.16.80.81:8080",
                 "k8s_auth_token": ""
             },
             "kubernetes": {

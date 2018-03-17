@@ -1,0 +1,15 @@
+apiVersion: kubeadm.k8s.io/v1alpha1
+kind: MasterConfiguration
+kubernetesVersion: v1.9.3
+networking:
+ podSubnet: 10.103.0.0/16
+apiServerCertSANs:
+- <LB_IP_ADDRESS>
+api:
+ advertiseAddress: <LB_IP_ADDRESS>
+ bindPort: 6443
+etcd:
+ endpoints:
+ - http://<ETCD_HOST1>:2379
+ - http://<ETCD_HOST2:2379
+ - http://<ETCD_HOST3>:2379
