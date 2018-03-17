@@ -3,6 +3,8 @@
 
 ### Topology
 
+![alt text] (https://github.com/gokulpch/Kubernetes_Prod_HA_Calico/blob/master/images/etc_pod%26emb_lb.png)
+
 * Three Masters-VM's/Bare Metal (can be changed as per requirement, usually odd numbers-n+1) which run the kubernetes control plane, etcd_docker containers, nginx_lb containers, calico control plane and other components such as heapster, kube-scheduler, kube-dashboard etc.
 * Three ETCD docker containers running on all three Master hosts.
 * Three Nginx docker containers running on all three Master hosts.
