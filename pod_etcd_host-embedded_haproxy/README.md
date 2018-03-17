@@ -151,3 +151,11 @@ sudo apt-get update && sudo apt-get install docker-ce -y
   kubectl apply -f heapster.yaml
   kubectl apply -f heapster_rbac.yaml
   ```
+* Get the admin token to login to the UI
+
+  ```
+  kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+  ```
+![alt text](https://github.com/gokulpch/Kubernetes_Prod_HA_Calico/blob/master/images/kube-heapster.png)
+![alt text](https://github.com/gokulpch/Kubernetes_Prod_HA_Calico/blob/master/images/kube-web-1.png)
+![alt text](https://github.com/gokulpch/Kubernetes_Prod_HA_Calico/blob/master/images/kube-webui-2.png)
